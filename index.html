@@ -31,6 +31,107 @@
 
   <style>
 
+
+
+
+
+
+
+
+
+
+
+/* الأساسيات العامة */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5f5f5;
+  padding: 10px 20px;
+}
+
+nav.navbar a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  font-size: 16px;
+}
+
+nav.navbar a:hover {
+  background: #ddd;
+  border-radius: 5px;
+}
+
+/* المقالات */
+#articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* شكل كل مقالة */
+#articles .article {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* سكشن الكتب */
+#books {
+  padding: 40px 20px;
+}
+
+/* ----------- 📱 موبايل ----------- */
+@media (max-width: 768px) {
+  nav.navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav.navbar a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .province-container {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  #provinceList {
+    max-height: 150px;
+    width: 100%;
+  }
+
+  #articles {
+    grid-template-columns: 1fr; /* كل مقالة تبقى في صف لوحدها */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     html { scroll-behavior: smooth; }
  
     body {
@@ -342,19 +443,19 @@
     <div class="splash-text">أهلاً بكِ في موقعنا</div>
   </div>
 
-
-
-
-
-
-
-  <nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
+<nav class="navbar" role="navigation" aria-label="القائمة الرئيسية">
   <a href="#header">الرئيسية</a>
   <a href="#about">من نحن</a>
   <a href="#courses">كورساتنا</a>
   <a href="#testimonials">آراء الأمهات</a>
   <a href="#books">الكتب الإلكترونية</a>
+  <a href="#articles">المقالات</a> <!-- ✨ الجديد -->
   <a href="#contact">اتصل بنا</a>
+
+
+
+
+
 
   <div class="province-container" style="margin-right: auto; margin-left: 20px;">
     <span id="selectedProvince">المحافظات</span>
@@ -386,6 +487,7 @@
     </div>
   </div>
 </nav>
+
 
   <header id="header">
     <img src="https://th.bing.com/th/id/R.49ebc903c0e26c68eb3d809fc56d08c7?rik=KWNB1Xzohi5i8w&riu=http%3a%2f%2fladybirdar.com%2fwp-content%2fuploads%2f2016%2f11%2f%d8%b5%d9%88%d8%b1-%d8%a7%d9%85-%d9%88%d8%a7%d8%b7%d9%81%d8%a7%d9%84%d9%87%d8%a7.jpg&ehk=5u46VFJ2rWE7CFZz74CWra%2f0Ey0pzwVXO59kcfkuMYY%3d&risl=&pid=ImgRaw&r=0" alt="أم مع أطفالها التوأم" />
@@ -460,6 +562,8 @@
 
 <section id="books" style="padding:60px; text-align:center; background:#f9f9f9;">
   <p>   
+
+
 
 <div style="text-align:center; margin-top:30px;">
   <div style="text-align:center; margin-top:50px;">
@@ -537,32 +641,56 @@
 </p>
 </section>
 
+<!-- 🔹 سكشن المقالات -->
+<section id="articles" style="padding: 50px; background: #f9f9f9; min-height: 400px;">
+  <h2>المقالات</h2>
 
+  <article class="article">
+    <h3>تنظيم النوم للتوأم</h3>
+    <button onclick="toggleText(this)">قراءة</button>
+    <p style="display: none;">
+      النوم المنتظم من أهم العوامل في نمو الطفل السليم، خاصة في سن مبكرة.
+      تنظيم الوقت وإنشاء روتين يساعد التوأم على الاستقرار والراحة،
+      مما ينعكس على تركيزهم ونموهم العقلي والجسدي.
+    </p>
+  </article>
 
+  <article class="article">
+    <h3>اللعب التفاعلي</h3>
+    <button onclick="toggleText(this)">قراءة</button>
+    <p style="display: none;">
+      اللعب من أفضل الوسائل التعليمية. من خلال اللعب التفاعلي،
+      يمكن تعزيز مهارات التواصل الاجتماعي وتحفيز الخيال والإبداع لدى الأطفال،
+      خاصة التوأم الذين يتعلمون من بعضهم البعض باستمرار.
+    </p>
+  </article>
 
-  <section class="articles">
-    <div class="article">
-      <h2>تنظيم النوم للتوأم</h2>
-      <button onclick="toggleText(this)">قراءة</button>
-      <p>النوم المنتظم من أهم العوامل في نمو الطفل السليم، خاصة في سن مبكرة. تنظيم الوقت وإنشاء روتين يساعد التوأم على الاستقرار والراحة، مما ينعكس على تركيزهم ونموهم العقلي والجسدي.</p>
-    </div>
-
-    <div class="article">
-      <h2>اللعب التفاعلي</h2>
-      <button onclick="toggleText(this)">قراءة</button>
-      <p>اللعب من أفضل الوسائل التعليمية. من خلال اللعب التفاعلي، يمكن تعزيز مهارات التواصل الاجتماعي وتحفيز الخيال والإبداع لدى الأطفال، خاصة التوأم الذين يتعلمون من بعضهم البعض باستمرار.</p>
-    </div>
-
-    <div class="article">
-      <h2>التعامل مع نوبات الغضب</h2>
-      <button onclick="toggleText(this)">قراءة</button>
-      <p>من الطبيعي أن يمر الطفل بنوبات غضب. المهم هو كيفية التعامل معها بهدوء وتعليم الطفل التعبير عن مشاعره بطريقة إيجابية. هذا يبني الثقة بين الأهل والطفل ويعزز النمو النفسي الصحي.</p>
-    </div>
-  </section>
-<section id="books" style="padding:60px; text-align:center; background:#f9f9f9;">
- 
-  <p>   </p>
+  <article class="article">
+    <h3>التعامل مع نوبات الغضب</h3>
+    <button onclick="toggleText(this)">قراءة</button>
+    <p style="display: none;">
+      من الطبيعي أن يمر الطفل بنوبات غضب. المهم هو كيفية التعامل معها بهدوء
+      وتعليم الطفل التعبير عن مشاعره بطريقة إيجابية. هذا يبني الثقة بين الأهل
+      والطفل ويعزز النمو النفسي الصحي.
+    </p>
+  </article>
 </section>
+
+
+<script>
+  // دالة لفتح/غلق النص
+  function toggleText(btn) {
+    const p = btn.nextElementSibling;
+    if (p.style.display === "none" || p.style.display === "") {
+      p.style.display = "block";
+      btn.textContent = "إخفاء";
+    } else {
+      p.style.display = "none";
+      btn.textContent = "قراءة";
+    }
+  }
+</script>
+
 
 
   <!-- آراء الأمهات -->
