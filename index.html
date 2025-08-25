@@ -1,6 +1,9 @@
 
 
 
+
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -38,10 +41,7 @@
 
 
 
-
-
-
-/* الأساسيات العامة */
+/* ---------------- الأساسيات ---------------- */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -49,26 +49,66 @@ body {
 
 nav.navbar {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-wrap: wrap; /* يسمح للعناصر بالتنقل لو ضاقت المساحة */
   justify-content: space-between;
+  align-items: center;
   background: #f5f5f5;
-  padding: 10px 20px;
+  padding: 10px 15px;
+  font-size: 16px;
 }
 
 nav.navbar a {
   text-decoration: none;
   color: #333;
-  padding: 8px 12px;
+  margin: 0 8px;
   font-size: 16px;
 }
 
 nav.navbar a:hover {
-  background: #ddd;
-  border-radius: 5px;
+  color: #007bff;
 }
 
-/* المقالات */
+/* ---------------- قائمة المحافظات ---------------- */
+.province-container {
+  position: relative;
+}
+
+#provinceButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#provinceList {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 5px;
+  z-index: 10;
+}
+
+#provinceList button {
+  display: block;
+  width: 100%;
+  text-align: right;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+#provinceList button:hover {
+  background: #f0f0f0;
+}
+
+/* ---------------- المقالات ---------------- */
 #articles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -76,52 +116,63 @@ nav.navbar a:hover {
   padding: 20px;
 }
 
-/* شكل كل مقالة */
 #articles .article {
   background: #fff;
-  padding: 15px;
-  border: 1px solid #eee;
   border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 15px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* سكشن الكتب */
+/* ---------------- الكتب ---------------- */
 #books {
   padding: 40px 20px;
+  text-align: center;
 }
 
-/* ----------- 📱 موبايل ----------- */
+/* ---------------- استجابة الموبايل ---------------- */
 @media (max-width: 768px) {
+
+  /* Navbar: خلي العناصر تصطف أفقي على طول الصفحة */
   nav.navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* لو العناصر كتيرة يبقى تقدر تسحب أفقياً */
+    font-size: 14px; /* تصغير الخط */
   }
 
   nav.navbar a {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
+    white-space: nowrap;
+    margin: 0 6px;
+    font-size: 14px;
   }
 
+  /* قائمة المحافظات */
   .province-container {
-    margin: 10px 0;
-    width: 100%;
+    margin: 5px 0;
+    width: auto;
   }
 
   #provinceList {
     max-height: 150px;
-    width: 100%;
+    width: 180px;
   }
 
+  /* المقالات: خلي كل مقال ياخد عرض كامل */
   #articles {
-    grid-template-columns: 1fr; /* كل مقالة تبقى في صف لوحدها */
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  #articles .article {
+    padding: 12px;
+  }
+
+  /* الكتب */
+  #books {
+    padding: 30px 15px;
   }
 }
-
-
-
-
 
 
 
