@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -31,6 +32,95 @@
 
   <style>
 
+/* ==============================================
+   1. تصحيح حالات <div> داخل <p>
+   ============================================== */
+
+/* أي span داخل <p> ليه display:block بس نصي السلوك */
+p span.block-like {
+  display: block;
+  margin: 10px 0;
+}
+
+/* =================================================================
+   2. تصميم Navbar تفاعلي وسهل الاستخدام على الهواتف
+   =============================================== */
+nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: #c9184a;
+  color: white;
+}
+
+nav.navbar .toggle-button {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+nav.navbar .nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+nav.navbar .nav-links a {
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color .3s;
+}
+
+nav.navbar .nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* عند الشاشات الصغيرة */
+@media (max-width: 768px) {
+  nav.navbar .toggle-button {
+    display: block;
+  }
+  nav.navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  nav.navbar .nav-links.active {
+    display: flex;
+  }
+  nav.navbar .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+}
+
+/* ==============================================
+   3. ترتيب الأعمدة (courses أو غيرها)
+   ============================================== */
+.columns-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.columns-flex .column-item {
+  flex: 1;
+  min-width: 200px; /* أو تختار الحجم اللي يناسب */
+}
+
+/* على الجوال: خليها تصطف عمودي */
+@media (max-width: 768px) {
+  .columns-flex {
+    flex-direction: column;
+  }
+}
+
+/* ==============================================
+   4. تحسينات عامة بسيطة (box-sizing وغيرها)
+   ============================================== */
+* {
+  box-sizing: border-box;
+}
 
 
 
