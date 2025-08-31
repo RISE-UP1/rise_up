@@ -38,23 +38,6 @@
   <style>
 
 
-/* التصميم الأساسي (للكمبيوتر مثلاً) */
-.container {
-  display: flex;
-  flex-direction: row;
-}
-
-/* لما الشاشة تبقى أصغر من 768px (يعني موبايل) */
-@media (max-width: 100%) {
-  .container {
-    flex-direction: column;
-  }
-}
-
-
-
-
-
 
 
 
@@ -133,7 +116,7 @@ nav.navbar a:hover {
   background: #f0f0f0;
 }
 
-/* ---------------- المقالات ---------------- */
+/* ---------------- المقالات --- */
 #articles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -182,7 +165,8 @@ nav.navbar a:hover {
     width: 180px;
   }
 
-  /* المقالات: خلي كل مقال ياخد عرض كامل */
+ 
+
   #articles {
     grid-template-columns: 1fr;
     gap: 15px;
