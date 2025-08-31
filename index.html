@@ -15,6 +15,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Rise Up | ارتقي" />
   <meta property="og:description" content="موقع Rise Up - الارتقاء نحو الأفضل" />
@@ -32,95 +37,20 @@
 
   <style>
 
-/* ==============================================
-   1. تصحيح حالات <div> داخل <p>
-   ============================================== */
 
-/* أي span داخل <p> ليه display:block بس نصي السلوك */
-p span.block-like {
-  display: block;
-  margin: 10px 0;
-}
-
-/* =================================================================
-   2. تصميم Navbar تفاعلي وسهل الاستخدام على الهواتف
-   =============================================== */
-nav.navbar {
+/* التصميم الأساسي (للكمبيوتر مثلاً) */
+.container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  background-color: #c9184a;
-  color: white;
+  flex-direction: row;
 }
 
-nav.navbar .toggle-button {
-  display: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-
-nav.navbar .nav-links {
-  display: flex;
-  gap: 12px;
-}
-
-nav.navbar .nav-links a {
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color .3s;
-}
-
-nav.navbar .nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* عند الشاشات الصغيرة */
+/* لما الشاشة تبقى أصغر من 768px (يعني موبايل) */
 @media (max-width: 768px) {
-  nav.navbar .toggle-button {
-    display: block;
-  }
-  nav.navbar .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-  nav.navbar .nav-links.active {
-    display: flex;
-  }
-  nav.navbar .nav-links a {
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-  }
-}
-
-/* ==============================================
-   3. ترتيب الأعمدة (courses أو غيرها)
-   ============================================== */
-.columns-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.columns-flex .column-item {
-  flex: 1;
-  min-width: 200px; /* أو تختار الحجم اللي يناسب */
-}
-
-/* على الجوال: خليها تصطف عمودي */
-@media (max-width: 768px) {
-  .columns-flex {
+  .container {
     flex-direction: column;
   }
 }
 
-/* ==============================================
-   4. تحسينات عامة بسيطة (box-sizing وغيرها)
-   ============================================== */
-* {
-  box-sizing: border-box;
-}
 
 
 
@@ -128,7 +58,15 @@ nav.navbar .nav-links a:hover {
 
 
 
-/* ---------------- الأساسيات ---------------- */
+
+
+
+
+
+
+
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -136,7 +74,7 @@ body {
 
 nav.navbar {
   display: flex;
-  flex-wrap: wrap; /* يسمح للعناصر بالتنقل لو ضاقت المساحة */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background: #f5f5f5;
