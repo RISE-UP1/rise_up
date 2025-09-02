@@ -1,6 +1,12 @@
 
 
 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -36,6 +42,33 @@
 
 
   <style>
+
+.navbar {
+  display: flex;
+  justify-content: center; /* يخلي الكلمات في النص */
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  flex-wrap: nowrap; /* نخليها دايمًا جنب بعض */
+  overflow-x: auto; /* لو الكلام كتير على الموبايل، يطلع Scroll أفقي بدل ما ينزل تحت بعض */
+}
+
+.navbar a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  white-space: nowrap; /* ما يخليش الكلمة تتقسم لسطرين */
+}
+
+@media (max-width: 600px) {
+  .navbar a {
+    font-size: 14px; /* نصغر الخط بس */
+  }
+}
+
+
+
 
 
 
@@ -868,6 +901,12 @@ nav.navbar a:hover {
   </script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 
