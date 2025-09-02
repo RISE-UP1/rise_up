@@ -69,12 +69,18 @@
   background-color: #ddd;
 }
 
+@media (max-width: 768px) {
+  nav.navbar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
 
-
-
-
-
-
+  nav.navbar a {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
 
 
 body {
@@ -849,19 +855,6 @@ nav.navbar a:hover {
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
