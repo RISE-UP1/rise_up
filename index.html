@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -68,97 +69,94 @@
 }
 
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
 
+
+
+/* ----- نيفبار ثابت ومرتب ----- */
 nav.navbar {
-  display: flex;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 30px;
+  background-color: #c9184a;
+  padding: 10px 0;
+  color: white;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background: #f5f5f5;
-  padding: 10px 15px;
-  font-size: 16px;
 }
 
 nav.navbar a {
+  color: white;
   text-decoration: none;
-  color: #333;
-  margin: 0 8px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
   font-size: 16px;
+  white-space: nowrap;
 }
 
 nav.navbar a:hover {
-  color: #007bff;
+  background-color: #a8183f;
 }
 
-/* ---------------- المقالات --- */
-#articles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 30px;
+/* ----- المحافظات خارج النيفبار ----- */
+.governorates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 10px;
+  background-color: #fff;
+  border-top: 2px solid #eee;
 }
 
-#articles .article {
-  background: #fff;
-  border-radius: 10px;
-  border: 1px solid #eee;
-  padding: 15px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.governorates a {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #c9184a;
+  font-weight: bold;
+  transition: all 0.2s ease;
 }
 
-/* ---------------- الكتب ---------------- */
-#books {
-  padding: 40px 20px;
-  text-align: center;
+.governorates a:hover {
+  background-color: #ffe6ec;
+  border-color: #c9184a;
 }
 
-/* ---------------- استجابة الموبايل ---------------- */
-@media (max-width: 760px) {
-
-  /* Navbar: خلي العناصر تصطف أفقي على طول الصفحة */
+/* ----- استجابة الموبايل ----- */
+@media (max-width: 768px) {
   nav.navbar {
-    flex-wrap: nowrap;
-    font-size: 14px; /* تصغير الخط */
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
   }
 
   nav.navbar a {
-    white-space: nowrap;
-    margin: 0 6px;
-    font-size: 14px;
+    font-size: 14px !important;
+    padding: 6px 10px !important;
+    margin: 4px !important;
   }
 
-  /* قائمة المحافظات */
-  .province-container {
-    margin: 5px 0;
-    width: auto;
+  .governorates {
+    flex-direction: row;
+    gap: 8px;
+    padding: 10px;
   }
 
-  #provinceList {
-    max-height: 150px;
-    width: 180px;
-  }
-
- 
-
-  #articles {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 30px;
-  }
-
-  #articles .article {
-    padding: 12px;
-  }
-
-  /* الكتب */
-  #books {
-    padding: 30px 15px;
+  .governorates a {
+    font-size: 13px;
+    padding: 6px 10px;
   }
 }
+
+
 
 
 
