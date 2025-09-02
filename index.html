@@ -35,9 +35,33 @@
 
 
   <style>
+/* أول حاجة: نخلي الـ navbar مرن ويتعامل مع الشاشات الصغيرة */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
 
+/* العناصر داخل الـ navbar */
+.navbar a {
+  margin: 5px 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px; /* حجم الخط الطبيعي */
+}
 
+/* لما الشاشة تبقى صغيرة (مثلاً أقل من 600px) */
+@media (max-width: 600px) {
+  .navbar a {
+    font-size: 14px; /* نصغر الخط */
+  }
 
+  .navbar {
+    flex-direction: column; /* نخلي العناصر تنزل تحت بعض أو عدلها حسب التصميم اللي تحبه */
+  }
+}
 
 
 
