@@ -1,7 +1,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -69,18 +68,27 @@
   background-color: #ddd;
 }
 
-@media (max-width: 768px) {
-  nav.navbar {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
+  @media (max-width: 768px) {
+    nav.navbar {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      gap: 10px !important;
+    }
+
+    nav.navbar a {
+      display: inline-block !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      font-size: 14px !important;
+      margin: 0 10px !important;
+      color: white !important;
+    }
   }
 
-  nav.navbar a {
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-}
+
 
 
 body {
